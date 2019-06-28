@@ -9,8 +9,8 @@ print(getwd())
 # #get z drive path
 # load("../zdrive_path.RData")
 # 
-# library(TMB)
-# library(INLA)
+library(TMB)
+library(INLA)
 # 
 # rmse_vec <- function(x, y, na.rm=T){
 #   return(sqrt(mean((x-y)^2, na.rm=na.rm)))
@@ -82,10 +82,10 @@ print(getwd())
 # 
 # 
 # 
-# tryCatch(dyn.unload(dynlib("gp1")),
-#          error = function(e) print(e))
-# compile("gp1.cpp")
-# dyn.load(dynlib("gp1"))
+tryCatch(dyn.unload(dynlib("gp1")),
+         error = function(e) print(e))
+compile("gp1.cpp")
+dyn.load(dynlib("gp1"))
 # 
 # rate_use <- Y_fit[locs_use, time_point_use] / pops_fit[locs_use]
 # 

@@ -370,11 +370,14 @@ fit <- nlminb(m$par, m$fn, m$gr, control=list(iter.max=300,eval.max=300))
 rep <- sdreport(m)
 print(proc.time() - ptm)
 
+rep_fixed <- rep$par.fixed
+rep_random <- rep$par.random
+
 # fit <- "test"
 # n_s <- 10000
 # rep <- matrix(runif(n_s^2), n_s, n_s)
 
-save(list = c("fit", "rep"),
+save(list = c("fit", "rep_fixed", "rep_random"),
      file=paste0(path_output, "/joint_time_all_fits2.RData"))
 
 

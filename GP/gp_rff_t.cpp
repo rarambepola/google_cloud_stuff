@@ -53,6 +53,11 @@ template<class Type>
   Type log_tau_mean = 1.0;
   Type log_tau_sd = 0.01;
   
+  // Type log_sigma_mean = 1.0;
+  // Type log_lambda_mean = 0.0;
+  
+  
+  
   Type f=0;
   f -= dnorm(log_kappa, log_kappa_mean, log_kappa_sd, true);
   f -= dnorm(log_tau, log_tau_mean, log_tau_sd, true);
